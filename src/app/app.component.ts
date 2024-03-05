@@ -1,16 +1,26 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
+import { CommonModule } from '@angular/common';
+import SettingsComponent from './features/settings/settings.component';
+import NavbarComponent from './core/navbar.component';
+import HomeComponent from './features/home/home.component';
+
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [
+    CommonModule,
+    RouterOutlet,
+    NavbarComponent,
+    SettingsComponent,
+    HomeComponent,
+  ],
   template: `
-    <h1>Welcome to {{title}}!</h1>
+    <app-navbar></app-navbar>
 
     <router-outlet />
   `,
-  styles: [],
 })
 export class AppComponent {
   title = 'newyorkcity-data';
